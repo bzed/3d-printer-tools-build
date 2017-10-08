@@ -126,9 +126,12 @@ function build() {
 }
 
 sudo apt update
+sudo apt -y upgrade
 sudo apt -y install build-essential cmake make git python3-all-dev python3-all-dbg
 
-for tool in "${TOOLS}"; do
+mkdir -p ${SRCDIR}
+
+for tool in ${TOOLS}; do
     build "${tool}"
 done
 
