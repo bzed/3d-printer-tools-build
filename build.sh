@@ -8,8 +8,8 @@ export TOOLS="libArcus CuraEngine"
 # and / or edit it to suit your needs. NOT TESTED YET!
 
 # export TOOLS="${TOOLS} libSavitar Uranium fdm_materials Cura Slic3r_prusa"
+# export TOOLS="${TOOLS} cura_octoprint_plugin cura_postprocessing_plugin cura_godmode_plugin cura_orientation_plugin"
 
-# sli3r
 
 export BASEDIR="$(dirname $(readlink -f $0))"
 
@@ -100,7 +100,19 @@ Uranium_url="${ultimaker_url}/Uranium"
 fdm_materials_tag=master
 fdm_materials_url="${ultimaker_url}/fdm_materials"
 
+cura_octoprint_plugin_tag=master
+cura_octoprint_plugin_url="https://github.com/fieldOfView/OctoPrintPlugin"
+cura_postprocessing_plugin_tag=master
+cura_postprocessing_plugin_url="https://github.com/nallath/PostProcessingPlugin"
+cura_godmode_plugin_tag=master
+cura_godmode_plugin_url="https://github.com/sedwards2009/cura-god-mode-plugin"
+cura_orientation_plugin_tag=master
+cura_orientation_plugin_url="https://github.com/nallath/CuraOrientationPlugin"
 
+cura_octoprint_plugin_packages=""
+cura_postprocessing_plugin_packages=""
+cura_godmode_plugin_packages=""
+cura_orientation_plugin_packages=""
 
 
 function build() {
