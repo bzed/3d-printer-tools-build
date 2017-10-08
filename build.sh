@@ -118,6 +118,9 @@ function build() {
     if git branch -a | grep -q ${branch}; then
         git reset --hard origin/${branch}
     fi
+    if [ "${part}" = "Cura" ]; then
+        sed -i 's,"default_value": 15,"default_value": 10,' resources/definitions/creality_cr10_beta.def.json
+    fi
     rm -rf build
     mkdir build && cd build
     ${CMAKE} ..
