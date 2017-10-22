@@ -85,7 +85,7 @@ Slic3r_prusa_packages="
 
 # git repositories
 ultimaker_url="https://github.com/Ultimaker/"
-Slic3r_prusa_url="https://github.com/prusa3d/Slic3r_prusa/"
+Slic3r_prusa_url="https://github.com/prusa3d/Slic3r"
 
 libArcus_tag=${build_tag}
 libArcus_url="${ultimaker_url}/libArcus"
@@ -130,9 +130,9 @@ function build() {
     if git branch -a | grep -q ${branch}; then
         git reset --hard origin/${branch}
     fi
-    if [ "${part}" = "Cura" ]; then
-        sed -i 's,"default_value": 15,"default_value": 10,' resources/definitions/creality_cr10_beta.def.json
-    fi
+    #if [ "${part}" = "Cura" ]; then
+    #    sed -i 's,"default_value": 15,"default_value": 10,' resources/definitions/creality_cr10_beta.def.json
+    #fi
     rm -rf build
     mkdir build && cd build
     ${CMAKE} ..
